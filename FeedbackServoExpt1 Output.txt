@@ -1,7 +1,7 @@
-Microseconds: 515
+Microseconds: 515     // Servo speed is initialized at 1500 which means "STOP"
 Microseconds: 521
 Microseconds: 515
-Microseconds: 514
+Microseconds: 514     // Feedback pulse times are all about the same, meaning servo is not rotating
 Microseconds: 520
 Microseconds: 521
 Microseconds: 515
@@ -9,15 +9,15 @@ Microseconds: 521
 Microseconds: 521
 Servo speed: 1490
 Microseconds: 514
-Servo speed: 1480
+Servo speed: 1480     // Servo typically remains stopped while speed is in the range 1480 - 1520
 Microseconds: 515
 Servo speed: 1470
 Microseconds: 521
 Servo speed: 1460
 Microseconds: 519
-Servo speed: 1450
+Servo speed: 1450     // At this point, I saw the servo rotating, so I released the "SpeedUp" button.
 Microseconds: 571
-Microseconds: 598
+Microseconds: 598     // From here on, the pulse times steadily increase, indicating that the servo is rotating at a constant speed.
 Microseconds: 616
 Microseconds: 672
 Microseconds: 701
@@ -31,7 +31,7 @@ Microseconds: 950
 Microseconds: 986
 Microseconds: 1007
 Microseconds: 1060
-Microseconds: 56
+Microseconds: 56      // Once the servo passes its "359 degree" point, the pulse times roll over toward 0
 Microseconds: 91
 Microseconds: 125
 Microseconds: 160
@@ -59,15 +59,15 @@ Microseconds: 906
 Microseconds: 936
 Microseconds: 971
 Microseconds: 991
-Microseconds: 1043
-Microseconds: 36
-Microseconds: 78
+Microseconds: 1043    // From documentation, the frequency of the feedback pulse is 910 Hz. It's "duty cycle" 
+Microseconds: 36      // (the percentage of time that the pulse remains at 3.3 Volts) ranges from 2.9%, when 
+Microseconds: 78      // it is at the beginning of a rotation up to 97.1%, when it reaches the end of a rotation.
 Microseconds: 114
-Microseconds: 150
-Microseconds: 187
-Microseconds: 220
+Microseconds: 150     // Period = 1/frequency;  so the period should be 1 / 910 Hz = 1100 microseconds
+Microseconds: 187     // 2.9% of 1100 is 31.9 microseconds
+Microseconds: 220     // 97.1% of 1100 is 1067 microseconds
 Microseconds: 254
-Microseconds: 282
+Microseconds: 282     // So we expect all the pulse lengths to be between 32 microseconds and 1067 microseconds
 Microseconds: 323
 Microseconds: 359
 Microseconds: 388
@@ -89,7 +89,7 @@ Microseconds: 921
 Microseconds: 958
 Microseconds: 980
 Microseconds: 1032
-Microseconds: 1068
+Microseconds: 1068      // 1068 > 1067 because the world is not perfect
 Microseconds: 64
 Microseconds: 98
 Microseconds: 132
@@ -97,4 +97,4 @@ Microseconds: 168
 Microseconds: 205
 Microseconds: 241
 Microseconds: 277
-Microseconds: 312
+Microseconds: 312
